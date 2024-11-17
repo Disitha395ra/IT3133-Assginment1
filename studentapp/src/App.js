@@ -1,17 +1,17 @@
 import './App.css';
 import {students} from './data/StudentsDb'
-import studenttable from './components/studenttable'
+import studentTable from './components/studenttable'
 
 function App() {
   return (
     <div className="App">
       <h1>Student information portal</h1>
       <hr/>
-      <table>
+      <table width="100%">
         <tbody>
           <tr>
             <td>
-              <studenttable students={students}/>
+              <studentTable students={students}></studentTable>
             </td>
           </tr>
         </tbody>
