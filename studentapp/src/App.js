@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import StudentTable from './components/StudentTable';
 import StudentProfile from './components/StudentProfile';
 import FontSizeToggle from './components/FontSizeToggle';
-import { students } from './StudentsDb';
+import { students } from './data/StudentsDb';
 import './App.css';
 
 const App = () => {
