@@ -1,23 +1,27 @@
+import React, { useState } from 'react';
+import StudentTable from './components/StudentTable';
+import StudentProfile from './components/StudentProfile';
+import FontSizeToggle from './components/FontSizeToggle';
+import { students } from './StudentsDb';
 import './App.css';
-import {students} from './data/StudentsDb'
-import studentTable from './components/studenttable'
 
-function App() {
+const App = () => {
+  const [selectedStudent, setSelectedStudent] = useState(students[0]);
+  const [fontSize, setFontSize] = useState('16px');
+
   return (
-    <div className="App">
-      <h1>Student information portal</h1>
-      <hr/>
-      <table width="100%">
-        <tbody>
-          <tr>
-            <td>
-              <studentTable students={students}></studentTable>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div style={{ fontSize }} className='outerDiv'>
+      <h1>Students Information Portal</h1>
+      <hr></hr>
+      <FontSizeToggle setFontSize={setFontSize} />
+      <div className="leftDiv">
+        <StudentTable students={students} setSelectedStudent={setSelectedStudent} />
+      </div>
+      <div className="rightDiv">
+        <StudentProfile student={selectedStudent} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
